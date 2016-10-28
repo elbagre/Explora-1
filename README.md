@@ -3,6 +3,8 @@
 Explora is a web application based off of the popular web forum Quora. Explora allows users to ask questions, 
 answer questions, and comment on answers across a seamless API.
 
+![Alt text](/app/assets/images/entry.png?raw=true "Login")
+
 ## Features
 
 ### Single Page Application
@@ -31,6 +33,8 @@ components have the ability to persist on the same page without needing re-rende
 flow smoothly and with an appreciable reduction in load-times. In addition, information persists as well reducing
 the number of calls to the backend that need to be made.
 
+![Alt text](/app/assets/images/index.png?raw=true "Login")
+
 ### Diverse Components
 
 There are many different components in the App database including Questions, Answers, Comments, Users, Topics, 
@@ -48,6 +52,8 @@ to extract it's first answer's author and body and that answer's associated comm
 Each question has its own ```QuestionDetail``` page that contains more information about the given question as
 well as a full list of that question's associated answers, and those answers' associated comments. The layouts of
 each page are inspired heavily by Quora.
+
+![Alt text](/app/assets/images/detail.png?raw=true "Login")
 
 ### Search
 
