@@ -1,53 +1,59 @@
 .comments {
-  background: #eee;
-  margin-bottom: 10px;
-  border-radius: 3px;
-}
-
-.comments h5 {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.comment-form {
-  width: 600px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-.comments span {
-  width: 35px;
-  height: 35px;
-  max-width: 35px;
-  max-height: 35px;
-  margin: 5px 10px;
-}
-
-.comment-form input[type="text"] {
-  background: #fff;
-  padding: 5px;
-  border-radius: 2px;
-  width: 430px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-.comment-form input[type="submit"] {
-  padding: 5px;
-  margin: 10px;
-  background: #6495ED;
-  color: #fff;
-  border-radius: 2px;
-}
-
-.comment-item {
-  font-size: 14px;
-  width: 560px;
-  padding-left: 40px;
+.comments .comment-form {
   display: flex;
-  padding-bottom: 5px;
+  flex-direction: row;
+}
+
+.comment-form > form {
+  display: flex;
+  width: 75%;
+}
+.comment-form > form > input[type="submit"] {
+  padding: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: block;
+  height: 18px;
+  margin: 5px 0;
+}
+
+.comment-form > form > input[type="text"] {
+  min-width: 75%;
 }
 
 .hidden {
   display: none;
+}
+
+.comment-item {
+  display: flex;
+  padding: 10px 5px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  background: whitesmoke;
+}
+
+.comment-item:nth-child(2n) {
+  background: #F2EBEB;
+}
+
+.comment-item h4 {
+  padding: 0 0 10px 0;
+}
+
+.author-photo {
+  background-image: url("../francis-drake.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
 }

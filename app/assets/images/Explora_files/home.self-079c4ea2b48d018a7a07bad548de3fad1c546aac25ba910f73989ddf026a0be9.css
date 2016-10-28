@@ -1,0 +1,62 @@
+/* line 1, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.home-main {
+  display: flex;
+  flex-direction: row;
+  width: 67%;
+  margin: 0 auto;
+}
+
+/* line 8, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.content-main {
+  width: 50%;
+}
+
+/* line 12, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+  min-width: 25%;
+  align-items: flex-end;
+}
+
+/* line 21, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.sidebar ul {
+  flex-direction: column;
+}
+
+/* line 25, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.feeds {
+  margin-right: 10%;
+}
+
+/* line 29, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.feeds > header {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5px;
+}
+
+/* line 35, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.feeds h4 {
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+/* line 39, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.feeds p {
+  display: none;
+}
+
+/* line 43, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.feeds ul > li > a {
+  display: block;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+/* line 49, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/home.scss */
+.feeds a:hover {
+  background: #ccc;
+}

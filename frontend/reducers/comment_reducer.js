@@ -1,4 +1,3 @@
-
 import * as Comment from '../actions/comment_actions.js';
 import { merge } from 'lodash';
 

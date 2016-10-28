@@ -1,85 +1,105 @@
-.detail-page-answer {
-  width: 600px;
-  border-top: 1px solid #ccc;
-  padding: 20px 0 10px 0;
+.question-index h4 {
+  padding: 5px 0;
 }
 
-.detail-page-answer > img {
-  width: 60px;
-  height: 60px;
-  max-width: 45px;
-  max-height: 45px;
-  margin-right: 10px;
+.question-index > h4:first-child{
+  border-bottom: 2px solid #ccc;
+  width: 100%;
 }
 
-.detail-page-answer > h4 {
-  margin-bottom: 10px;
-  width: 70%;
-  font-weight: bold;
+.answer-box {
+  padding: 10px 0;
 }
 
-.hidden-form {
-  display: none;
-  border: 1px solid #ccc;
-  background: #eee;
+.answer-box > a {
+  display: block;
+  color: #A9A9A9;
+  padding: 10px 0;
+  font-size: 14px;
 }
 
-.hidden-form > div {
-  background: #eee;
-  border-bottom: 1px solid #ccc;
-  width: 598px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
-.hidden-form > div h5 {
-  font-weight: bold;
-}
-
-.hidden-form > div a {
-  font-size: 12px;
-  color: #aaa;
-}
-
-.hidden-form > div a:hover {
+.question-index a:hover {
   text-decoration: underline;
 }
 
-.hidden-form > div > div {
-  padding: 20px 0 10px 0;
+.answer-box h3 {
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.hidden-form textarea {
-  height: 100px;
-  padding: 10px;
-  width: 578px;
-  border-bottom: 1px solid #ccc;
-  resize: none;
-  background: #fff;
+.answer-box h3:hover {
+  text-decoration: underline;
 }
 
-.detail-page-answer > input {
-  background: salmon;
+.answer-box .question-links > li:nth-child(2n) > button {
+  background: #D3D3D3;
+  color: #708090;
+  border: 1px solid #708090;
 }
 
-.hidden-form input[type="submit"] {
-  padding: 5px;
-  margin: 10px;
-  background: #2F4F4F;
+.answer-box .question-links > li:nth-child(2n) > button:hover {
+  background: #708090;
   color: #fff;
+}
+
+.hidden-form {
   border-radius: 3px;
+  margin-top: 20px;
+  display: none;
+  width: 100%;
+  overflow: hidden;
+  background: #E5DEDE;
 }
 
-.toggled form {
-  display: block;
+.hidden-form > div {
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.answer-box .toggle {
-  display: block;
-  margin: 0 10px 0 0;
+.hidden-form > div h4 {
+  padding: 0 0 10px 0;
+}
+
+.hidden-form > div a {
+  font-size: 14px;
+}
+
+.hidden-form .author-photo {
+  width: 45px;
+  height: 45px;
+}
+
+.hidden-form > input[type="submit"] {
+  padding: 10px 0;
+  align-self: flex-end;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #5F779F;
+  font-size: 14px;
+}
+
+.hidden-form > input[type="submit"]:hover {
+  background: #EA5A5F;
+  color: #fff;
+}
+
+.toggled .hidden-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle {
+  background: #EA5A5F;
+  color: #fff;
+  border: 1px solid #CB242A;
+}
+
+.toggle:hover {
+  background: #CB242A;
+  box-shadow: 5px #000;
 }
 
 .answer-bio {
@@ -88,36 +108,9 @@
 
 .answer-input {
   height: 150px;
-}
-
-.answer-box {
-  padding-top: 20px;
-}
-
-.form-style {
-  display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
-  width: 598px;
+  width: auto;
   background: #fff;
-  border-bottom: 1px solid #ccc;
-  color: #aaa;
-  padding: 5px 0;
-}
-
-.form-style > li {
-  padding: 5px;
-  text-align: center;
-}
-
-
-.form-style button {
-  background: #fff;
-  border: 0;
-  color: inherit;
-}
-
-.form-style > li:last-child {
-  margin: 0 0 0 400px;
-  padding: 0;
+  border-left: 1px solid #F2EBEB;
+  border-right: 1px solid #F2EBEB;
+  resize: none;
 }

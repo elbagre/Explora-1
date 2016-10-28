@@ -1,122 +1,85 @@
-
-.question-detail {
-  padding-top: 10px;
-  height: 100%;
-  width: 600px;
-  overflow: hidden;
-}
-
-.question-detail header {
-  padding-top: 15px;
-}
-
-.question-detail > header > h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
 .question-detail > header > p {
-  margin: 20px 0;
+  padding: 20px 0;
 }
 
 .detail-links {
   display: flex;
-  align-items: baseline;
-  font-size: 14px;
+  flex-direction: row;
+}
+
+.detail-links > li > a {
+  padding: 10px 10px 10px 0;
+  color: #A9A9A9;
+}
+
+.detail-links > li > a:hover {
+  text-decoration: underline;
+}
+.detail-page-answer {
+}
+
+.detail-page-answer > div:first-child {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-page-answer > div:first-child > button {
+  margin: 30px 0;
+}
+
+.detail-answer-box {
+  margin-bottom: 10px;
+}
+
+.detail-answer-box:nth-child(n - 1) {
+  border-top: 1px solid #ccc;
+}
+
+.detail-answer-box .author-photo {
+  height: 35px;
+  width: 35px;
+}
+
+.detail-answer-box > div:first-child {
+}
+
+.detail-answer-box > div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.question-detail .cover-photo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  background: #ECEBEB;
+}
+
+.question-detail .cover-photo > img {
+  display: flex;
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+
+.detail-answer-box > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.detail-answer-box .question-links {
   margin: 20px 0;
 }
 
-.detail-links > li {
-  display: block;
-  height: 20px;
-  margin-right: 10px;
-}
-
-.detail-links button {
-  margin-right: 10px;
-  font-size: 12px;
-  padding: 5px;
-  border-radius: 3px;
-  background: #F0FFFF;
-  color: #4682B4;
-  font-weight: bold;
-  border: 1px solid #ADD8E6;
-  cursor: pointer;
-}
-
-.detail-links button:hover {
-  border-color: #2378B0;
-}
-
-.detail-links a {
-  color: #aaa;
-}
-
-.detail-links a:hover {
-  text-decoration: underline;
-}
-
-.answer-list {
-  display: block;
-  width: 600px;
-}
-
-.detail-answer {
-  display: block;
-  width: 600px;
-  border-top: 1px solid #ccc;
-  height: auto;
-  word-wrap: break-word;
-}
-
-.cover-photo {
-  border-radius: 5px;
-  display: flex;
-  height: auto;
-  width: 600px;
-  max-height: 150px;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-  background: #eee;
-}
-
-.cover-photo > img {
-  width: auto;
-  height: 100%;
-  max-width: 600px;
-  max-height: 600px;
-}
-
-.detail-answer h5 {
-  font-weight: bold;
-  padding: 10px 0;
-}
-
-.detail-answer p {
-}
-
 .detail-answer-header {
-  display: flex;
-  align-items: center;
-}
-
-span {
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 10px;
-  background-image: url(http://www.hotel-r.net/im/hotel/au/sir-francis-drake-20.jpg);
-  background-size: contain;
-  background-position: center;
-}
-
-.answer-list > h4 {
-  margin: 30px 0 10px 0;
-  font-size: 18px;
-  font-weight: bold;
-
+  padding: 20px 0;
 }

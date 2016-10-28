@@ -40,7 +40,7 @@ class CommentIndex extends React.Component {
       <CommentIndexItem comment={comment} key={idx} />
     ));
     return(
-      <div className={this.props.toggle}>
+      <section className={this.props.toggle}>
         <div className="comment-form">
           <span />
           <form onSubmit={this.handleSubmit}>
@@ -54,7 +54,7 @@ class CommentIndex extends React.Component {
         <div>
           {comments}
         </div>
-      </div>
+      </section>
     );
   }
 }

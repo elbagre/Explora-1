@@ -4,7 +4,8 @@ class Api::QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      render "api/questions/show"
+      @answers = []
+      render :show
     else
       render @question.errors.full_messages, status: 402
     end
@@ -13,6 +14,7 @@ class Api::QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answers = @question.answers.includes(:author).order(id: :desc)
+
     render :show
   end
 

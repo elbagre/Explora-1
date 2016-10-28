@@ -30,7 +30,15 @@ class TopicHome extends React.Component {
   header() {
     if (this.props.topic) {
       return (
-        <h1>{this.props.topic.name}</h1>
+        <header>
+          <h1>{this.props.topic.name}</h1>
+          <ul>
+            <li>Overview</li>
+            <li>Feed</li>
+            <li>Answer</li>
+            <li><button>Follow Topic</button></li>
+          </ul>
+        </header>
       );
     }
   }
@@ -40,10 +48,14 @@ class TopicHome extends React.Component {
       return (
         this.props.topic.questions.map( (question, idx) => (
           <div key={idx} className="topic-item">
-            <h2>{question.title}</h2>
-            <h4>{question.most_upvoted_author}</h4>
-            {this.image(question)}
-            <p>{question.most_upvoted_answer.body}</p>
+            <h3>{question.title}</h3>
+            <div>
+              {this.image(question)}
+              <div>
+                <h4>{question.most_upvoted_author}</h4>
+                <p>{question.most_upvoted_answer.body}</p>
+              </div>
+            </div>
           </div>
         ))
       );

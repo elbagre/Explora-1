@@ -24,27 +24,26 @@ class SideBar extends React.Component {
   }
 
   render() {
-    return (
-      <aside className="sidebar">
-        <nav className="feeds">
-          <h3>Feeds</h3>
-          <p>Edit</p>
-          <ul>
-            {this.topicLinks()}
-          </ul>
-        </nav>
-        <nav className="trending">
-          <h3>Trending Now</h3>
-          <ul>
-            <li>Is it dangerous to travel to Syria?</li>
-            <li>I got robbed while backpacking through Bolivia</li>
-            <li>Is it illegal to buy bamba?</li>
-            <li>What are some good vegetarian foods in Croatia?</li>
-          </ul>
-        </nav>
-      </aside>
-    );
-  }
+    // if (this.props.location.slice(1, 6) === 'topic') {
+    //   return (
+    //     <div />
+    //   );
+    // } else {
+      return (
+        <aside className="sidebar">
+          <nav className="feeds">
+            <header>
+              <h4>Feeds</h4>
+              <p>Edit</p>
+            </header>
+            <ul>
+              {this.topicLinks()}
+            </ul>
+          </nav>
+        </aside>
+      );
+    }
+  // }
 }
 
 export default SideBar;

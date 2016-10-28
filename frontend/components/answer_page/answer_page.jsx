@@ -29,6 +29,7 @@ class AnswerPage extends React.Component {
 
     return(
       <section className="question-index">
+        <h4>Can you answer these questions?</h4>
         {answerableQuestions}
       </section>
     );

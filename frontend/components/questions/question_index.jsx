@@ -14,8 +14,8 @@ class QuestionIndex extends React.Component {
     ));
     return (
       <div className="question-index">
-        <h2>Top Explorations For You</h2>
-        <ul className="question-list group">
+        <h4>Top Explorations For You</h4>
+        <ul className="question-list">
           {questions}
         </ul>
       </div>

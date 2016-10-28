@@ -65,9 +65,10 @@ class AnswerForm extends React.Component {
   render() {
     return (
       <section className="detail-page-answer">
-        <img src="assets/lead-pencil-grey.png" />
-        <h4>Can you answer this question?</h4>
-        <button onClick={this.handleToggle}>Answer</button>
+        <div>
+          <h4>Can you answer this question?</h4>
+          <button onClick={this.handleToggle}>Answer</button>
+        </div>
         <div className={this.state.toggle}>
           <form className="hidden-form" onSubmit={this.handleSubmit}>
             <div>

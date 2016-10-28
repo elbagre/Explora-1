@@ -2,7 +2,7 @@ import SideBar from './sidebar.jsx';
 import { connect } from 'react-redux';
 import { requestAllTopics, requestSingleTopic } from '../../actions/topic_actions.js';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   topics: state.topics.items,
   currentUser: state.session.currentUser
 });

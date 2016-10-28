@@ -1,122 +1,149 @@
-.search-logo {
-  display: block;
-  float: left;
-  width: 100px;
-  padding: 0 5px;
+.home-header {
+  border-top: 3px solid #008B8B;
+  display: flex;
+  background: #fff;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-height: 52px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.home-nav {
+  display: flex;
+  margin: 0 auto;
+  min-width: 50%;
+  justify-content: space-between;
+}
+
+.home-nav > div:first-child {
+  display: flex;
+  align-items: baseline;
+}
+
+.home-links {
+  display: flex;
+}
+
+.home-links > li > a, .home-links > li > button {
+  display: flex;
+  font-size: 16px;
+  padding: 17px 10px;
   font-weight: bold;
-  font-size: 24px;
-  color: #800000;
-  font-family: helvetica;
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  color: #008B8B;
 }
 
-.search-form {
-  padding: 10px;
-  float: left;
-  background: #fff;
+.home-links button {
+  width: auto;
 }
 
-.search-submit {
-  float: left;
-  padding: 5px;
-  background: #fff;
-  color: #2F4F4F;
-  font-size: 14px;
-  border: 1px solid #aaa;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+.home-links > li > a:hover, .home-links > li > button:hover {
+  background: #EA5A5F;
+  color: #fff;
 }
 
-.search-submit:hover {
-  border-color: #2F4F4F;
+.focused .home-links {
+  display: none;
 }
 
-.search-input {
-  background: #eee;
-  color: #000;
-  font-weight: normal;
-  width: 295.3px;
-  float: left;
-  padding: 4px;
-  text-align: bottom;
-  border: 1px solid #ccc;
-  border-right: 0;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-
+.home-nav .toggle {
+  display: none;
 }
 
 .describe-hidden {
   display: none;
 }
 
-.focused ul {
-  display: none;
+.search-form {
+  display: flex;
 }
 
-.focused form {
-  padding-right: 0;
-  width: 900px;
-  display: block;
-  float: left;
-}
-
-.focused input[type="text"] {
-  width: 600px;
-  border: 1px solid #000;
-  border-radius: 2px;
-  background: #fff;
-}
-
-.focused input[type="submit"] {
-  margin: 0 0 0 10px;
-  background: #8AB6E2;
-  color: #fff;
-  font-weight: bold;
-  font-size: 12px;
-  border-color: #8AB6E2;
-}
-
-.true {
-  background: #f00;
-}
-
-.toggle {
-  margin: 13px 0;
-  float: left;
-  font-family: sans-serif;
-  display: none;
-  background: #fff;
-  color: #ccc;
-  border-radius: 2px;
-  border: 1px solid #ccc;
-  padding: 3px 10px;
-  text-align: center;
-  font-size: 12px;
-  font-stretch: expanded;
+.search-form logo {
   cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  color: #20B2AA;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #008B8B;
+  height: 30px;
+  padding: 11px;
 }
 
-.describe-toggled {
+.search-form > input[type="text"] {
   display: block;
-  width: 598px;
-  margin: 0 0 10px 120px;
-  height: 60px auto;
-  padding: 5px 5px 15px 5px;
-  background: #eee;
-  border: 1px solid #ccc;
-  color: #000;
-  resize: vertical;
+  padding: 5px 10px;
+  height: 20px;
+  margin: 10px 0 10px 5px;;
+  width: 300px;
 }
 
-.describe-toggled:focus {
+.focused .search-form > input[type="text"] {
+  margin-right: 10px;
+}
+
+.focused .search-form > input[type="text"] {
+  width: 600px;
+}
+
+.search-form > input[type="submit"] {
   background: #fff;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
+  padding: 5px;
+  height: 20px;
+  margin: 10px 0;
+  margin-right: 20px;
+  border-radius: 0;
+  color: #2F4F4F;
 }
 
-.focused button {
-  display: block;
+.focused .search-form > input[type="submit"] {
+  background: #20B2AA;
+  color: #fff;
+  border: 1px solid #008B8B;
 }
 
-.focused {
-  display: block;
+.focused .search-list {
+  display: flex;
+}
+
+.search-list {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 31%;
+  top: 65px;
+  left: 33%;
+  border-radius: 3px;
+  padding: 5px;
+  background: #fff;
+}
+
+.search-list > li:nth-child(n) {
+  background: #FFFFF0;
+}
+
+.search-list > li:nth-child(2n) {
+  background: #FFFAF0;
+}
+
+.search-list > li {
+  padding: 5px;
+  border-top: 1px solid #eee;
+  margin: 0 5px;
+}
+
+.search-list > li:first-child {
+  text-align: center;
+  color: #EA5A5F;
+  border-top: 0;
+  font-weight: bold;
 }

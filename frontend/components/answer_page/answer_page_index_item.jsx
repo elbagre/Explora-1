@@ -53,27 +53,42 @@ class AnswerPageIndexItem extends React.Component {
     });
   }
 
+  answers() {
+    if (this.state.count > 1) {
+      return(
+        <a onClick={this.handleClick}>{this.state.count} Answers</a>
+      );
+    } else if (this.state.count === 1) {
+      return(
+        <a onClick={this.handleClick}>{this.state.count} Answer</a>
+      );
+    }
+  }
+
   render() {
     return (
     <article className={this.state.toggle}>
-        <h4 className="question-title"
-            onClick={this.handleClick}
-            >{this.props.question.title}</h4>
-        <p className="question-description">{this.props.question.description}</p>
+      <h3 className="question-title"
+          onClick={this.handleClick}
+          >{this.props.question.title}</h3>
+      {this.answers()}
       <ul className="question-links group">
         <li><button className="toggle" onClick={this.handleToggle}>Answer</button></li>
         <li><button>Pass</button></li>
-        <li onClick={this.handleClick}><a>{this.state.count} Answers</a></li>
         <li><a>Downvote</a></li>
       </ul>
       <form className="hidden-form" onSubmit={this.handleSubmit}>
         <div>
-          <span />
+          <div className="author-photo" />
           <div>
-            <h5>{this.props.currentUser.username}</h5>
+            <h4>{this.props.currentUser.username}</h4>
             <a>Add Bio</a>
           </div>
         </div>
+        <ul className="form-style">
+          <li><input type="file"
+                     onChange={this.updateFile} /></li>
+        </ul>
         <textarea className="answer-bio"
           onChange={this.handleChange("bio")}
           value={this.state.bio} />

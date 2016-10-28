@@ -8,9 +8,9 @@ class CommentIndexItem extends React.Component {
   render() {
     return(
       <div className="comment-item">
-        <span />
+        <div className="author-photo" />
         <div>
-          <h5>{this.props.comment.authorName}</h5>
+          <h4>{this.props.comment.authorName}</h4>
           <p>{this.props.comment.body}</p>
         </div>
       </div>

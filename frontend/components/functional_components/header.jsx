@@ -7,7 +7,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      focus: "home-nav group"
+      focus: "home-nav"
     };
     this.toggleFocus = this.toggleFocus.bind(this);
     this.untoggleFocus = this.untoggleFocus.bind(this);
@@ -24,31 +24,28 @@ class Header extends React.Component {
   }
 
   untoggleFocus() {
-    this.setState({ focus: "home-nav group"});
+    this.setState({ focus: "home-nav"});
   }
 
   toggleFocus() {
-      this.setState({ focus: "home-nav focused group" });
+      this.setState({ focus: "home-nav focused" });
       this.props.toggleModalFocus();
   }
 
   render () {
-    console.log(this.state.focus);
     if (this.props.currentUser) {
       return (
-        <div className="home-header group">
+        <div className="home-header">
           <nav className={this.state.focus}>
             <Search toggleFocus={this.toggleFocus}/>
-            <ul className="home-links group">
-              <li className="read" onClick={this.handleClick("/home")}>
-                <img src="/assets/book-open-page-red.png" />
-                <h4 to="/home">Read</h4>
-              </li>
-              <li className="answer" onClick={this.handleClick("/answer")}>
-                <img src="/assets/lead-pencil-red.png" />
-                <h4 to="/answer">Answer</h4>
-              </li>
-              <li onClick={this.props.logout}>Logout</li>
+            <ul className="home-links">
+              <li className="read"><Link to="/home" >
+                Read
+              </Link></li>
+            <li className="answer"><Link to="/answer">
+                Answer
+              </Link></li>
+              <li><button onClick={this.props.logout}>Logout</button></li>
             </ul>
             <QueryIndex untoggleModal={this.props.untoggleModal}/>
           </nav>
@@ -58,7 +55,6 @@ class Header extends React.Component {
       return (
         <div className="root-header">
           <h1>Explora</h1>
-          <h3>A path to every journey</h3>
         </div>
       );
     }

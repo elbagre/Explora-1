@@ -1,0 +1,112 @@
+/* line 1, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+body, button, span, div, h1, h2, h3, h4, h5, h6, label, textarea, input,
+form, ul, li, a, p {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  text-align: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  font: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  background: transparent;
+  color: inherit;
+  border-radius: 0;
+  white-space: inherit;
+}
+
+/* line 19, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+body {
+  position: relative;
+  box-sizing: content-box;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: helvetica;
+}
+
+/* line 27, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+ul {
+  list-style: none;
+  display: flex;
+}
+
+/* line 32, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+button:hover, input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+/* line 36, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+/* line 41, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* line 46, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* line 51, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 56, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+h5 {
+  font-size: 12px;
+}
+
+/* line 60, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+h6 {
+  font-size: 10px;
+}
+
+/* line 64, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+a {
+  cursor: pointer;
+}
+
+/* line 68, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+input[type="text"], input[type="password"] {
+  width: 95%;
+  padding: 5px;
+  background: #eee;
+  border: 1px solid #ccc;
+  margin: 5px 0 10px 0;
+}
+
+/* line 76, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+input[type="text"]:focus, input[type="password"]:focus {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+/* line 82, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* line 87, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/reset.scss */
+button, input[type="submit"] {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  white-space: nowrap;
+  border: 1px solid #4169E1;
+  width: 75px;
+  text-align: center;
+  border-radius: 3px;
+  background: #4682B4;
+}

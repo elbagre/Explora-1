@@ -4,14 +4,12 @@ import GuestButton from './guest/guest_login.js';
 
 const SessionLinks = ({ currentUser, children }) => {
   return(
-    <nav className="registration group">
-      <ul className="registration-links group">
-        <li className="signup"><Link to="/signup">Create an Account</Link></li>
-        <li className="login"><Link to="/login">Log In To Explora</Link></li>
-        <li className="terms">By creating an account at Explora you indicate that you have read and
-          agree to the Terms of Service and Privacy Policy</li>
+    <nav className="registration">
+      <ul className="registration-links">
+        <li><button><Link to="/signup">Create Account</Link></button></li>
+        <li><button><Link to="/login">Log In</Link></button></li>
+        <li><GuestButton /></li>
       </ul>
-      <GuestButton />
       {children}
     </nav>
   );

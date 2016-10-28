@@ -1,0 +1,113 @@
+/* line 1, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.question-index h4 {
+  padding: 5px 0;
+}
+
+/* line 5, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.question-index > h4:first-child {
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+}
+
+/* line 10, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.answer-box {
+  padding: 10px 0;
+}
+
+/* line 14, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.answer-box > a {
+  display: block;
+  color: #A9A9A9;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+/* line 21, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.question-index a:hover {
+  text-decoration: underline;
+}
+
+/* line 25, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.answer-box h3 {
+  font-size: 20px;
+}
+
+/* line 29, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.answer-box .question-links > li:nth-child(2n) > button {
+  background: #D3D3D3;
+  color: #708090;
+  border: 1px solid #708090;
+}
+
+/* line 35, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.answer-box .question-links > li:nth-child(2n) > button:hover {
+  background: #708090;
+  color: #fff;
+}
+
+/* line 40, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.hidden-form {
+  display: none;
+  width: 100%;
+  overflow: hidden;
+  background: #F2EBEB;
+  border: 1px solid #ccc;
+}
+
+/* line 48, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.hidden-form > div {
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* line 55, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.hidden-form > div h4 {
+  padding: 0 0 10px 0;
+}
+
+/* line 59, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.hidden-form > div a {
+  font-size: 14px;
+}
+
+/* line 63, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.hidden-form .author-photo {
+  width: 45px;
+  height: 45px;
+}
+
+/* line 68, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.toggled .hidden-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 73, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.toggle {
+  background: #EA5A5F;
+  color: #fff;
+  border: 1px solid #CB242A;
+}
+
+/* line 79, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.toggle:hover {
+  background: #CB242A;
+  box-shadow: 5px #000;
+}
+
+/* line 84, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.answer-bio {
+  display: none;
+}
+
+/* line 88, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/answers.scss */
+.answer-input {
+  height: 150px;
+  width: auto;
+  background: #fff;
+  border-left: 0;
+  border-right: 0;
+  resize: none;
+}

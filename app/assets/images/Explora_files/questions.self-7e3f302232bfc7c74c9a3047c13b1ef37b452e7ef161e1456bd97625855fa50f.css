@@ -1,0 +1,83 @@
+/* line 1, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-index {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 6, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* line 13, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-box {
+  display: flex;
+  flex-direction: column;
+  white-space: normal;
+  height: 5%;
+  margin-bottom: 30px;
+}
+
+/* line 21, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-box > h3 {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* line 26, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-box > h3:hover {
+  text-decoration: underline;
+}
+
+/* line 30, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-box > div {
+  padding: 10px 0;
+  display: flex;
+}
+
+/* line 35, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-box > div > div {
+  max-height: 150px;
+}
+
+/* line 39, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-box > div > div > p {
+  overflow: hidden;
+  max-height: 100%;
+}
+
+/* line 44, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.cover-photo > img {
+  width: 200px;
+  height: auto;
+  max-height: 100%;
+  overflow: hidden;
+  resize: 200px 200px;
+  margin: 0 10px 0 0;
+}
+
+/* line 53, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-links {
+  display: flex;
+  align-items: baseline;
+}
+
+/* line 58, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-links > li:nth-child(n + 2) {
+  margin-left: 10px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+/* line 64, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.question-links > li:nth-child(n + 2):hover {
+  text-decoration: underline;
+}
+
+/* line 68, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/questions.scss */
+.hidden > div {
+  display: none;
+}

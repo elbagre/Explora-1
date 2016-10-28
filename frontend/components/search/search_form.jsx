@@ -69,7 +69,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="group">
+      <div>
         <form className="search-form" onSubmit={this.handleSubmit}>
           <logo onClick={this.home} className="search-logo">Explora</logo>
           <input className="search-input"

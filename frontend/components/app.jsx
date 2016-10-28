@@ -28,8 +28,8 @@ class App extends React.Component {
           toggleModalFocus={this.toggleModalFocus}
           modal={this.state.modal}/>
         <div className={this.state.modal} onClick={this.untoggleModal} />
-        <section className="home-main group">
-          <SideBarContainer className="home-left-sidebar"/>
+        <section className="home-main">
+          <SideBarContainer location={this.props.location.pathname} className="home-left-sidebar"/>
           <div className="content-main">
             {this.props.children}
           </div>

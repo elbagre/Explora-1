@@ -1,4 +1,4 @@
-icon_path = "#{Rails.root}/app/assets/images/"
+icon_path = "#{Rails.root}/app/assets/images/post_images/"
 TagTopic.destroy_all
 
 Topic.destroy_all

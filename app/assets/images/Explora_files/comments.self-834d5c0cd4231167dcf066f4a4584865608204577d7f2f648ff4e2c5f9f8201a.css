@@ -1,0 +1,69 @@
+/* line 1, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.comments {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 6, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.comments .comment-form {
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 11, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.comment-form > form {
+  display: flex;
+  width: 75%;
+}
+
+/* line 15, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.comment-form > form > input[type="submit"] {
+  padding: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: block;
+  height: 18px;
+  margin: 5px 0;
+}
+
+/* line 24, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.comment-form > form > input[type="text"] {
+  min-width: 75%;
+}
+
+/* line 28, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.hidden {
+  display: none;
+}
+
+/* line 32, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.comment-item {
+  display: flex;
+  padding: 10px 5px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  background: whitesmoke;
+}
+
+/* line 40, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.comment-item:nth-child(2n) {
+  background: #F2EBEB;
+}
+
+/* line 44, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.comment-item h4 {
+  padding: 0 0 10px 0;
+}
+
+/* line 48, /Users/appacademy/Desktop/Explora-App/app/assets/stylesheets/api/comments.scss */
+.author-photo {
+  background-image: url("../francis-drake.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

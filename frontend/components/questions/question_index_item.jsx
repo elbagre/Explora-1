@@ -40,9 +40,13 @@ class QuestionIndexItem extends React.Component {
       <li className="question-box">
         <h3 onClick={this.handleClick(this.props.question.id)}
           className="question-title">{this.props.question.title}</h3>
-        <h4 className="question-author">{this.props.question.most_upvoted_author}</h4>
-        {this.image()}
-        <p className="question-answer">{this.props.question.most_upvoted_answer.body}</p>
+        <div>
+          {this.image()}
+          <div>
+            <h4 className="question-author">{this.props.question.most_upvoted_author}</h4>
+            <p className="question-answer">{this.props.question.most_upvoted_answer.body}</p>
+          </div>
+        </div>
         <QuestionNav toggle={this.toggle} />
         <CommentIndex toggle={this.state.toggle} answerId={this.props.question.most_upvoted_answer.id} />
       </li>

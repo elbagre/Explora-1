@@ -35,14 +35,18 @@ class AnswerItem extends React.Component {
 
   render() {
     return (
-      <article className="detail-answer">
+      <article className="detail-answer-box">
         <div className="detail-answer-header">
-          <span></span>
-          <h5>{this.props.answer.author}</h5>
+          <div className="author-photo" />
+          <div>
+            <h4>{this.props.answer.author}</h4>
+          </div>
         </div>
-        {this.image()}
-        <p>{this.props.answer.body}</p>
-        <ul className="detail-links">
+        <div>
+          {this.image()}
+          <p>{this.props.answer.body}</p>
+        </div>
+        <ul className="question-links">
           <li><button className="links-button">Upvote</button></li>
           <li><a>Downvote</a></li>
           <li><a onClick={this.handleClick}>Comment</a></li>
