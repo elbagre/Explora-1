@@ -127,14 +127,6 @@
   background: #fff;
 }
 
-.search-list > li:nth-child(n) {
-  background: #FFFFF0;
-}
-
-.search-list > li:nth-child(2n) {
-  background: #FFFAF0;
-}
-
 .search-list > li {
   padding: 5px;
   border-top: 1px solid #eee;
