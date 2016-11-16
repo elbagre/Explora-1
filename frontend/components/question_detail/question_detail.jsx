@@ -36,7 +36,7 @@ class QuestionDetail extends React.Component {
           currentUser={this.props.currentUser}
           id={this.props.id}
           createAnswer={this.props.createAnswer}/>
-        <section className="question-index">
+        <section className="answer-index">
           <h4>{answers.length} Answers</h4>
           {answers}
         </section>
