@@ -7,6 +7,15 @@
   width: 100%;
 }
 
+.answer-index > h4:first-child{
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+}
+
+.answer-index h4 {
+  padding: 5px 0;
+}
+
 .answer-box {
   padding: 10px 0;
 }
@@ -19,6 +28,10 @@
 }
 
 .question-index a:hover {
+  text-decoration: underline;
+}
+
+.answer-index a:hover {
   text-decoration: underline;
 }
 

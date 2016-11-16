@@ -22,6 +22,8 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @answers = @user.answers.includes(:author)
+    @questions = @user.questions.includes(:author)
   end
 
   private

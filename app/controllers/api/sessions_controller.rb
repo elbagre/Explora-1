@@ -6,6 +6,8 @@ class Api::SessionsController< ApplicationController
     )
 
     if @user
+      @answers = @user.answers.includes(:author)
+      @questions = @user.questions.includes(:author)
       log_in!(@user)
       render 'api/users/show'
     else
@@ -17,6 +19,8 @@ class Api::SessionsController< ApplicationController
     @user = current_user
 
     if @user
+      @answers = @user.answers.includes(:author)
+      @questions = @user.questions.includes(:author)
       log_out!
       render "api/users/show"
     else

@@ -16,8 +16,14 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :questions
-  has_many :answers
+  has_many :questions,
+    class_name: "Question",
+    foreign_key: :author_id
+
+  has_many :answers,
+    class_name: "Answer",
+    foreign_key: :author_id
+
   has_many :comments
 
   after_initialize :ensure_session_token

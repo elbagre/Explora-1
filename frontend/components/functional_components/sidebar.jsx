@@ -24,11 +24,11 @@ class SideBar extends React.Component {
   }
 
   render() {
-    // if (this.props.location.slice(1, 6) === 'topic') {
-    //   return (
-    //     <div />
-    //   );
-    // } else {
+    if (this.props.location.slice(1, 6) === 'topic' || this.props.location.slice(1, 5) === 'user') {
+      return (
+        <div />
+      );
+    } else {
       return (
         <aside className="sidebar">
           <nav className="feeds">
@@ -43,7 +43,7 @@ class SideBar extends React.Component {
         </aside>
       );
     }
-  // }
+  }
 }
 
 export default SideBar;

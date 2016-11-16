@@ -33,7 +33,7 @@ class AnswerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const id = this.props.id;
-     const formData = new FormData();
+    const formData = new FormData();
 
      if (this.state.imageFile !== null) {
        formData.append("answer[image]", this.state.imageFile);
