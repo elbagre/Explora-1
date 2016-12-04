@@ -4,6 +4,11 @@
   margin-left: 15%;
 }
 
+.user-home h3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .user-home header {
   display: flex;
   height: 150px;
@@ -62,4 +67,8 @@ article.detail-answer-box {
 .user-answer-item {
   padding: 20px 0 10px 0;
   border-bottom: 1px solid #ccc;
+}
+
+.user-answer-item:last-child {
+  border-bottom: 0;
 }

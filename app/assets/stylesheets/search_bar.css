@@ -119,12 +119,12 @@
   display: none;
   flex-direction: column;
   position: absolute;
-  width: 31%;
   top: 65px;
-  left: 33%;
+  left: 110px;
   border-radius: 3px;
   padding: 5px;
   background: #fff;
+  width: 620px;
 }
 
 .search-list > li {
@@ -143,4 +143,8 @@
 
 .search-list > li > a {
   display: block;
+}
+
+.search-bar {
+  position: relative;
 }

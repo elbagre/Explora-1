@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import QueryIndex from '../search/query_index_container.js';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -69,7 +70,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="search-bar">
         <form className="search-form" onSubmit={this.handleSubmit}>
           <logo onClick={this.home} className="search-logo">Explora</logo>
           <input className="search-input"
@@ -87,6 +88,9 @@ class SearchBar extends React.Component {
           placeholder="Enter Question Details (Optional)"
           onChange={this.handleChange.bind(this, "description")}
           value={this.state.description}/>
+        <QueryIndex untoggleModal={this.props.untoggleModal}
+          clearForms={this.clearForms}
+          querySearch={this.querySearch}/>
       </div>
     );
   }

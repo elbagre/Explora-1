@@ -2,6 +2,7 @@ import React from 'react';
 import AnswerItem from '../question_detail/answer_item.jsx';
 import AnswerPageIndexItem from '../answer_page/answer_page_index_item.jsx';
 import QuestionIndexItem from '../questions/question_index_item.jsx';
+import { hashHistory } from 'react-router';
 
 class UserHome extends React.Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class UserHome extends React.Component {
     this.answers = this.answers.bind(this);
     this.body = this.body.bind(this);
     this.questions = this.questions.bind(this);
+  }
+
+  handleClick(id) {
+    return () => hashHistory.push(`/question/${id}`);
   }
 
   componentDidMount() {
@@ -69,7 +74,7 @@ class UserHome extends React.Component {
       return(
         this.props.user.answers.map( (answer, idx) => (
           <div className="user-answer-item" key={idx}>
-            <h3>{answer.question}</h3>
+            <h3 onClick={this.handleClick(answer.questionId)}>{answer.question}</h3>
             <AnswerItem
               answer={answer}
               requestAllComments={this.props.requestAllComments}

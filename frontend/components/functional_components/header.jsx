@@ -1,7 +1,6 @@
 import React from 'react';
 import Search from '../search/search_container.js';
 import { Link, hashHistory } from 'react-router';
-import QueryIndex from '../search/query_index_container.js';
 
 class Header extends React.Component {
   constructor(props) {
@@ -37,7 +36,8 @@ class Header extends React.Component {
       return (
         <div className="home-header">
           <nav className={this.state.focus}>
-            <Search toggleFocus={this.toggleFocus}/>
+            <Search toggleFocus={this.toggleFocus}
+              untoggleModal={this.props.untoggleModal}/>
             <ul className="home-links">
               <li className="read"><Link to="/home" >
                 Read
@@ -47,7 +47,6 @@ class Header extends React.Component {
               </Link></li>
               <li><button onClick={this.props.logout}>Logout</button></li>
             </ul>
-            <QueryIndex untoggleModal={this.props.untoggleModal}/>
           </nav>
         </div>
       );
