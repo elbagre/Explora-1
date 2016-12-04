@@ -1,0 +1,65 @@
+.user-home {
+  display: block;
+  width: 80%;
+  margin-left: 15%;
+}
+
+.user-home header {
+  display: flex;
+  height: 150px;
+  width: 100%;
+  align-items: flex-end;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-home header > h2 {
+  padding: 20px 0;
+  align-self: flex-start;
+}
+
+.user-home > header img {
+  height: 100px;
+  width: 100px;
+  align-self: center;
+  margin: 0 20px;
+  border-radius: 100%;
+}
+
+.user-home input[type="file"] {
+  display: none;
+}
+
+.user-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-top: 20px;
+}
+
+.user-sidebar > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-sidebar > ul > li a {
+  display: block;
+  padding: 5px 0;
+}
+
+.user-output {
+  width: 80%;
+}
+
+article.detail-answer-box {
+  border-top: 0;
+}
+
+.user-answer-item {
+  padding: 20px 0 10px 0;
+  border-bottom: 1px solid #ccc;
+}

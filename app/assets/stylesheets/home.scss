@@ -17,6 +17,8 @@
 
 .content-main {
   margin-top: 75px;
+  display: block;
+  width: 67%;
 }
 
 .modal {
@@ -37,7 +39,7 @@
 }
 
 .sidebar {
-  margin-top: 75px;
+  margin-top: 85px;
   display: flex;
   flex-direction: column;
   width: 25%;

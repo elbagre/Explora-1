@@ -72,9 +72,9 @@ class AnswerForm extends React.Component {
         <div className={this.state.toggle}>
           <form className="hidden-form" onSubmit={this.handleSubmit}>
             <div>
-              <span />
+              <div className="author-photo" />
               <div>
-                <h5>{this.props.currentUser.username}</h5>
+                <h4>{this.props.currentUser.username}</h4>
                 <a>Add Bio</a>
               </div>
             </div>

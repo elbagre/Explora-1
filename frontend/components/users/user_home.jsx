@@ -1,6 +1,7 @@
 import React from 'react';
 import AnswerItem from '../question_detail/answer_item.jsx';
 import AnswerPageIndexItem from '../answer_page/answer_page_index_item.jsx';
+import QuestionIndexItem from '../questions/question_index_item.jsx';
 
 class UserHome extends React.Component {
   constructor(props) {
@@ -67,10 +68,13 @@ class UserHome extends React.Component {
     if (this.props.user.answers) {
       return(
         this.props.user.answers.map( (answer, idx) => (
-          <AnswerItem
-            answer={answer}
-            requestAllComments={this.props.requestAllComments}
-            key={idx} />
+          <div className="user-answer-item" key={idx}>
+            <h3>{answer.question}</h3>
+            <AnswerItem
+              answer={answer}
+              requestAllComments={this.props.requestAllComments}
+            />
+          </div>
         )
       ));
     }
