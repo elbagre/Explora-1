@@ -24,6 +24,8 @@ class Question < ActiveRecord::Base
 
   has_many :tag_topics
 
+  has_many :user_actions, as: :actionable
+
   attr_reader :most_upvoted_answer, :most_upvoted_author
 
   def most_upvoted_answer

@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116163202) do
+ActiveRecord::Schema.define(version: 20161214035211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actionables", force: :cascade do |t|
+    t.integer "user_id",          null: false
+    t.integer "actionable_id",    null: false
+    t.string  "actionable_class", null: false
+    t.string  "actionable_type",  null: false
+  end
+
+  add_index "actionables", ["user_id", "actionable_id"], name: "index_actionables_on_user_id_and_actionable_id", using: :btree
 
   create_table "answers", force: :cascade do |t|
     t.integer  "author_id",                      null: false
@@ -46,6 +55,16 @@ ActiveRecord::Schema.define(version: 20161116163202) do
   add_index "comments", ["answer_id"], name: "index_comments_on_answer_id", using: :btree
   add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
 
+  create_table "follows", force: :cascade do |t|
+    t.integer  "user_id",            null: false
+    t.integer  "followed_item_id",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "followed_item_type", null: false
+  end
+
+  add_index "follows", ["followed_item_type", "followed_item_id"], name: "index_follows_on_followed_item_type_and_followed_item_id", using: :btree
+
   create_table "questions", force: :cascade do |t|
     t.string   "title",                       null: false
     t.text     "description"
@@ -74,6 +93,17 @@ ActiveRecord::Schema.define(version: 20161116163202) do
   end
 
   add_index "topics", ["name"], name: "index_topics_on_name", unique: true, using: :btree
+
+  create_table "user_actions", force: :cascade do |t|
+    t.integer  "user_id",         null: false
+    t.integer  "actionable_id",   null: false
+    t.string   "actionable_type", null: false
+    t.string   "user_action",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "user_actions", ["user_id", "actionable_id"], name: "index_user_actions_on_user_id_and_actionable_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",           null: false

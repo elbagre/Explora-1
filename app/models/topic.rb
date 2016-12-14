@@ -25,6 +25,8 @@ class Topic < ActiveRecord::Base
   has_many :questions,
   through: :tag_topics
 
+  has_many :user_actions, as: :actionable
+
   def self.names
     Topic.all.map { |topic| topic.name }
   end

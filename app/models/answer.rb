@@ -26,6 +26,8 @@ class Answer < ActiveRecord::Base
   belongs_to :question
   has_many :comments
 
+  has_many :user_actions, as: :actionable
+
   belongs_to :author,
   class_name: "User",
   foreign_key: :author_id

@@ -30,6 +30,12 @@ class User < ActiveRecord::Base
 
   has_many :comments
 
+  has_many :actions,
+    class_name: "UserAction",
+    foreign_key: :user_id
+
+  has_many :user_actions, as: :actionable
+
   after_initialize :ensure_session_token
 
   attr_reader :password
