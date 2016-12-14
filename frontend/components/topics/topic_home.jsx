@@ -1,4 +1,5 @@
 import React from 'react';
+import QuestionIndexItem from '../questions/question_index_item.jsx';
 
 class TopicHome extends React.Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class TopicHome extends React.Component {
     this.isFollowed = this.isFollowed.bind(this);
     this.followedTopicIds = this.followedTopicIds.bind(this);
     this.followId = this.followId.bind(this);
+    this.refreshUserActions = this.refreshUserActions.bind(this);
+    this.filterQuestions = this.filterQuestions.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +28,10 @@ class TopicHome extends React.Component {
     if (nextProps.id !== this.props.id) {
       this.props.requestSingleTopic(nextProps.id);
     }
+  }
+
+  refreshUserActions() {
+    this.props.requestUserActions();
   }
 
   handleClass() {
@@ -96,21 +103,34 @@ class TopicHome extends React.Component {
     }
   }
 
+  filterQuestions() {
+    const answerIds = this.props.downvotedAnswers.map( (downvote) => {
+      return downvote.actionable_id;
+    });
+
+    return this.props.topic.questions.filter( (question) => {
+      if (answerIds.indexOf(question.most_upvoted_answer.id) === -1) {
+        return question;
+      }
+    });
+  }
+
   questions() {
     if (this.props.topic.questions) {
       return (
-        this.props.topic.questions.map( (question, idx) => (
-          <div key={idx} className="topic-item">
-            <h3>{question.title}</h3>
-            <div>
-              {this.image(question)}
-              <div>
-                <h4>{question.most_upvoted_author}</h4>
-                <p>{question.most_upvoted_answer.body}</p>
-              </div>
-            </div>
-          </div>
-        ))
+        this.filterQuestions().map( (question, idx) => (
+            <QuestionIndexItem question={question}
+                               currentUser={this.props.currentUser}
+                               requestAllComments={this.props.requestAllComments}
+                               requestUserActions={this.props.requestUserActions}
+                               upvotedAnswers={this.props.upvotedAnswers}
+                               createUserAction={this.props.createUserAction}
+                               destroyUserAction={this.props.destroyUserAction}
+                               downvotedAnswers={this.props.downvotedAnswers}
+                               refreshUserActions={this.refreshUserActions}
+                               key={idx} />
+          )
+        )
       );
     }
   }

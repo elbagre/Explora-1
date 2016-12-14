@@ -13,6 +13,10 @@ class AnswerPageIndexItem extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleDownvote = this.toggleDownvote.bind(this);
+    this.isDownvoted = this.isDownvoted.bind(this);
+    this.togglePass = this.togglePass.bind(this);
+    this.isPassed = this.isPassed.bind(this);
   }
 
   componentDidMount() {
@@ -65,6 +69,88 @@ class AnswerPageIndexItem extends React.Component {
     }
   }
 
+  handleDownvote() {
+    if (this.isDownvoted()) {
+      return "downvoted";
+    } else {
+      return "downvote";
+    }
+  }
+
+  toggleDownvote() {
+    if (this.isDownvoted()) {
+      this.props.destroyUserAction(this.downvoteId());
+    } else {
+      this.props.createUserAction({
+        user_id: this.props.currentUser.id,
+        actionable_id: this.props.question.id,
+        actionable_type: "Question",
+        user_action: "downvote"
+      });
+    }
+    this.props.refreshUserActions();
+  }
+
+  downvoteId() {
+    const idx = this.downvotedQuestionIds().indexOf(this.props.question.id);
+    return this.props.downvotedQuestions[idx].id;
+  }
+
+  isDownvoted() {
+    if (this.downvotedQuestionIds().indexOf(this.props.question.id) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  downvotedQuestionIds() {
+    return this.props.downvotedQuestions.map( (downvote) => {
+      return downvote.actionable_id;
+    });
+  }
+
+  handlePass() {
+    if (this.isPassed()) {
+      return "downvoted";
+    } else {
+      return "downvote";
+    }
+  }
+
+  togglePass() {
+    if (this.isPassed()) {
+      this.props.destroyUserAction(this.passId());
+    } else {
+      this.props.createUserAction({
+        user_id: this.props.currentUser.id,
+        actionable_id: this.props.question.id,
+        actionable_type: "Question",
+        user_action: "pass"
+      });
+    }
+    this.props.refreshUserActions();
+  }
+
+  passId() {
+    const idx = this.passedQuestionIds().indexOf(this.props.question.id);
+    return this.props.passedQuestions[idx].id;
+  }
+
+  isPassed() {
+    if (this.passedQuestionIds().indexOf(this.props.question.id) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  passedQuestionIds() {
+    return this.props.passedQuestions.map( (pass) => {
+      return pass.actionable_id;
+    });
+  }
+
   render() {
     return (
     <article className={this.state.toggle}>
@@ -74,8 +160,8 @@ class AnswerPageIndexItem extends React.Component {
       {this.answers()}
       <ul className="question-links group">
         <li><button className="toggle" onClick={this.handleToggle}>Answer</button></li>
-        <li><button>Pass</button></li>
-        <li><a>Downvote</a></li>
+        <li><button onClick={this.togglePass}>Pass</button></li>
+        <li><a onClick={this.toggleDownvote}>Downvote</a></li>
       </ul>
       <form className="hidden-form" onSubmit={this.handleSubmit}>
         <div>

@@ -86,3 +86,17 @@ button.following {
   background: #008B8B;
   border: 1px solid #008B8B;
 }
+
+.downvoted {
+  display: none;
+}
+
+button.upvoted {
+  background-color: #eee;
+  color: #aaa;
+  border: 1px solid #ccc;
+}
+
+button.upvoted:hover {
+  border: 1px solid #aaa;
+}

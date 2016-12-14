@@ -1,10 +1,12 @@
 import React from 'react';
 
-const QuestionNav = ({ toggle }) => (
+const QuestionNav = ({ toggle, toggleUpvote, toggleDownvote, handleUpvote }) => (
   <div className="question-nav">
     <ul className="question-links">
-      <li><button>Upvote</button></li>
-      <li><a>Downvote</a></li>
+      <li><button className={handleUpvote().toLowerCase()}
+                  onClick={toggleUpvote}
+                  >{handleUpvote()}</button></li>
+      <li><a onClick={toggleDownvote}>Downvote</a></li>
       <li><a onClick={toggle}>Comment</a></li>
     </ul>
   </div>

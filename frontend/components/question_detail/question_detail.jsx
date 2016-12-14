@@ -16,6 +16,7 @@ class QuestionDetail extends React.Component {
     this.isDownvoted = this.isDownvoted.bind(this);
     this.toggleDownvote = this.toggleDownvote.bind(this);
     this.answers = this.answers.bind(this);
+    this.refreshUserActions = this.refreshUserActions.bind(this);
   }
 
   componentDidMount() {
@@ -35,6 +36,10 @@ class QuestionDetail extends React.Component {
     } else {
       return "Follow";
     }
+  }
+
+  refreshUserActions() {
+    this.props.requestUserActions();
   }
 
   toggleFollow() {
@@ -116,7 +121,7 @@ class QuestionDetail extends React.Component {
       return downvote.actionable_id;
     });
     return this.props.question.answers.filter( (answer) => {
-      if (answerIds.indexOf(answer.id)) {
+      if (answerIds.indexOf(answer.id) === -1) {
         return answer;
       }
     });
@@ -126,12 +131,14 @@ class QuestionDetail extends React.Component {
     const answers = this.answers().map( (answer, idx) => (
       <AnswerItem
         answer={answer}
+        currentUser={this.props.currentUser}
         downvotedAnswers={this.props.downvotedAnswers}
         upvotedAnswers={this.props.upvotedAnswers}
         createUserAction={this.props.createUserAction}
         destroyUserAction={this.props.destroyUserAction}
         requestUserActions={this.props.requestUserActions}
         requestAllComments={this.props.requestAllComments}
+        refreshUserActions={this.refreshUserActions}
         key={idx} />
     ));
 
