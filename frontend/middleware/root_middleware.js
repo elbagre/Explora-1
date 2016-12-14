@@ -6,10 +6,11 @@ import CommentMiddleware from './comment_middleware.js';
 import TopicMiddleware from './topic_middleware.js';
 import SearchMiddleware from './search_middleware.js';
 import UserMiddleware from './user_middleware.js';
+import ActionableMiddleware from './actionable_middleware.js';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware, QuestionMiddleware, AnswerMiddleware, CommentMiddleware,
-  TopicMiddleware, SearchMiddleware, UserMiddleware
+  TopicMiddleware, SearchMiddleware, UserMiddleware, ActionableMiddleware
 );
 
 export default RootMiddleware;

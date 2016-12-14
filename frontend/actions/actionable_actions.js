@@ -17,7 +17,7 @@ export const createUserAction = (userAction) => ({
   user_action
 });
 
-export const destroyUserAction = (actionId) => ({
+export const destroyUserAction = (id) => ({
   type: DESTROY_USER_ACTION,
-  actionId
+  id
 });

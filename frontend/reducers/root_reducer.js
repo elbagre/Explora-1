@@ -6,6 +6,7 @@ import CommentReducer from './comment_reducer.js';
 import TopicReducer from './topic_reducer.js';
 import SearchReducer from './search_reducer.js';
 import UserReducer from './user_reducer.js';
+import ActionableReducer from './actionable_reducer.js';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -14,7 +15,8 @@ const RootReducer = combineReducers({
   comments: CommentReducer,
   topics: TopicReducer,
   query: SearchReducer,
-  users: UserReducer
+  users: UserReducer,
+  actionables: ActionableReducer
 });
 
 export default RootReducer;
