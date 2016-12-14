@@ -16,5 +16,6 @@ Rails.application.routes.draw do
         get 'search_index'
       end
     end
+    resources :user_actions, only: [:create, :destroy, :index]
   end
 end
