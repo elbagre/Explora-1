@@ -23,4 +23,10 @@ class Api::UserActionsController < ApplicationController
     @user_actions = UserAction.where("user_id = ?", current_user.id)
     render :index
   end
+
+  private
+
+  def user_action_params
+    params.require(:user_action).permit(:user_id, :actionable_id, :actionable_type, :user_action)
+  end
 end

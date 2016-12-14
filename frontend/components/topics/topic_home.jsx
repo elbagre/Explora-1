@@ -5,6 +5,11 @@ class TopicHome extends React.Component {
     super(props);
     this.questions = this.questions.bind(this);
     this.header = this.header.bind(this);
+    this.handleClass = this.handleClass.bind(this);
+    this.toggleFollow = this.toggleFollow.bind(this);
+    this.isFollowed = this.isFollowed.bind(this);
+    this.followedTopicIds = this.followedTopicIds.bind(this);
+    this.followId = this.followId.bind(this);
   }
 
   componentDidMount() {
@@ -12,10 +17,55 @@ class TopicHome extends React.Component {
     this.props.requestUserActions();
   }
 
+  componentWillUnmount() {
+    this.props.receiveSingleTopic([]);
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.id !== this.props.id) {
       this.props.requestSingleTopic(nextProps.id);
     }
+  }
+
+  handleClass() {
+    if (this.isFollowed()) {
+      return "Following";
+    } else {
+      return "Follow";
+    }
+  }
+
+  toggleFollow() {
+    if (this.isFollowed()) {
+      this.props.destroyUserAction(this.followId());
+    } else {
+      this.props.createUserAction({
+        user_id: this.props.currentUser.id,
+        actionable_id: this.props.topic.id,
+        actionable_type: "Topic",
+        user_action: "follow"
+      });
+    }
+    this.props.requestUserActions();
+  }
+
+  followId() {
+    const idx = this.followedTopicIds().indexOf(this.props.topic.id);
+    return this.props.follows[idx].id;
+  }
+
+  isFollowed() {
+    if (this.followedTopicIds().indexOf(this.props.topic.id) !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  followedTopicIds() {
+    return this.props.follows.map( (follow) => {
+      return follow.actionable_id;
+    });
   }
 
   image(question) {
@@ -37,7 +87,9 @@ class TopicHome extends React.Component {
             <li>Overview</li>
             <li>Feed</li>
             <li>Answer</li>
-            <li><button>Follow Topic</button></li>
+            <li><button onClick={this.toggleFollow}
+                        className={this.handleClass().toLowerCase()}
+                        >{this.handleClass()}</button></li>
           </ul>
         </header>
       );
