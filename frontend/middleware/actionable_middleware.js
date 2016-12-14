@@ -5,7 +5,7 @@ const ActionableMiddleware = ({ getState, dispatch }) => (next) => (action) => {
   const success = (userActions) => dispatch(Action.receiveUserActions(userActions));
   switch(action.type) {
     case Action.CREATE_USER_ACTION:
-      API.createUserAction(action.user_action);
+      API.createUserAction(action.userAction);
       break;
     case Action.DESTROY_USER_ACTION:
       API.destroyUserAction(action.id);

@@ -9,6 +9,7 @@ class TopicHome extends React.Component {
 
   componentDidMount() {
     this.props.requestSingleTopic(this.props.id);
+    this.props.requestUserActions();
   }
 
   componentWillReceiveProps(nextProps) {

@@ -13,7 +13,7 @@ const defaultState = {
 const ActionableReducer = (initialState = defaultState, action) => {
   switch(action.type) {
     case Action.RECEIVE_USER_ACTIONS:
-      return action.user_actions;
+      return action.userActions;
     default:
       return initialState;
   }

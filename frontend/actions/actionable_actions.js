@@ -9,12 +9,12 @@ export const requestUserActions = () => ({
 
 export const receiveUserActions = (userActions) => ({
   type: RECEIVE_USER_ACTIONS,
-  user_actions
+  userActions
 });
 
 export const createUserAction = (userAction) => ({
   type: CREATE_USER_ACTION,
-  user_action
+  userAction
 });
 
 export const destroyUserAction = (id) => ({

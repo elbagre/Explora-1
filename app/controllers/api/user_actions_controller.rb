@@ -1,4 +1,4 @@
-class Api::UserActionController < ApplicationController
+class Api::UserActionsController < ApplicationController
   def create
     @user_action = UserAction.new(user_action_params)
 
