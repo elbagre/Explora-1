@@ -44,7 +44,7 @@ class QuestionIndex extends React.Component {
 
     return (
       <div className="question-index">
-        <h4>Top Explorations For You</h4>
+        <h4 className='question-header'>Top Explorations For You</h4>
         <ul className="question-list">
           {filteredQuestions}
         </ul>

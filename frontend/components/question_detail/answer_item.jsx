@@ -90,9 +90,9 @@ class AnswerItem extends React.Component {
 
   handleDownvote() {
     if (this.isDownvoted()) {
-      return "downvoted";
+      return "Downvoted";
     } else {
-      return "detail-answer-box";
+      return "Downvote";
     }
   }
 
@@ -131,7 +131,7 @@ class AnswerItem extends React.Component {
 
   render() {
     return (
-      <article className={this.handleDownvote()}>
+      <article className="detail-answer-box">
         <div className="detail-answer-header">
           <div className="author-photo" />
           <div>
@@ -148,7 +148,7 @@ class AnswerItem extends React.Component {
                       >{this.handleUpvote()}</button></li>
           <li><a className={this.handleDownvote()}
                  onClick={this.toggleDownvote}
-                 >Downvote</a></li>
+                 >{this.handleDownvote()}</a></li>
           <li><a onClick={this.handleClick}>Comment</a></li>
         </ul>
         <CommentIndex toggle={this.state.toggle} answerId={this.props.answer.id} />

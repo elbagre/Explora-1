@@ -71,9 +71,9 @@ class AnswerPageIndexItem extends React.Component {
 
   handleDownvote() {
     if (this.isDownvoted()) {
-      return "downvoted";
+      return "Downvoted";
     } else {
-      return "downvote";
+      return "Downvote";
     }
   }
 
@@ -112,9 +112,9 @@ class AnswerPageIndexItem extends React.Component {
 
   handlePass() {
     if (this.isPassed()) {
-      return "downvoted";
+      return "Passed";
     } else {
-      return "downvote";
+      return "Pass";
     }
   }
 
@@ -160,8 +160,8 @@ class AnswerPageIndexItem extends React.Component {
       {this.answers()}
       <ul className="question-links group">
         <li><button className="toggle" onClick={this.handleToggle}>Answer</button></li>
-        <li><button onClick={this.togglePass}>Pass</button></li>
-        <li><a onClick={this.toggleDownvote}>Downvote</a></li>
+        <li><button onClick={this.togglePass}>{this.handlePass()}</button></li>
+        <li><a onClick={this.toggleDownvote}>{this.handleDownvote()}</a></li>
       </ul>
       <form className="hidden-form" onSubmit={this.handleSubmit}>
         <div>

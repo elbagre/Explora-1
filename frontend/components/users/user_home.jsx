@@ -19,6 +19,10 @@ class UserHome extends React.Component {
     this.answers = this.answers.bind(this);
     this.body = this.body.bind(this);
     this.questions = this.questions.bind(this);
+    this.refreshUserActions = this.refreshUserActions.bind(this);
+    this.state = {
+      content: "answers"
+    };
   }
 
   handleClick(id) {
@@ -26,14 +30,23 @@ class UserHome extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.id);
     this.props.requestSingleUser(this.props.id);
+    this.props.requestUserActions();
+  }
+
+  componentWillUnmount() {
+    this.props.receiveSingleUser({});
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.id !== this.props.id) {
+      this.setState({ content: "answers"});
       this.props.requestSingleUser(nextProps.id);
     }
+  }
+
+  refreshUserActions() {
+    this.props.requestUserActions();
   }
 
   header() {
@@ -50,20 +63,30 @@ class UserHome extends React.Component {
     }
   }
 
+  changeContent(content) {
+    return () => this.setState({content});
+  }
+
+  content() {
+    if (this.state.content === "answers") {
+      return this.answers();
+    } else {
+      return this.questions();
+    }
+  }
+
   body() {
     return(
       <div className="user-body">
         <div className="user-sidebar">
           <h4>Feeds</h4>
           <ul>
-            <li><a>Answers</a></li>
-            <li><a>Questions</a></li>
-            <li><a>Followers</a></li>
-            <li><a>Following</a></li>
+            <li><a onClick={this.changeContent("answers")}>Answers</a></li>
+            <li><a onClick={this.changeContent("questions")}>Questions</a></li>
           </ul>
         </div>
         <div className="user-output">
-          {this.answers()}
+          {this.content()}
         </div>
       </div>
     );
@@ -77,7 +100,14 @@ class UserHome extends React.Component {
             <h3 onClick={this.handleClick(answer.questionId)}>{answer.question}</h3>
             <AnswerItem
               answer={answer}
+              currentUser={this.props.currentUser}
+              downvotedAnswers={this.props.downvotedAnswers}
+              upvotedAnswers={this.props.upvotedAnswers}
+              createUserAction={this.props.createUserAction}
+              destroyUserAction={this.props.destroyUserAction}
+              requestUserActions={this.props.requestUserActions}
               requestAllComments={this.props.requestAllComments}
+              refreshUserActions={this.refreshUserActions}
             />
           </div>
         )
@@ -88,13 +118,21 @@ class UserHome extends React.Component {
   questions() {
     if (this.props.user.questions) {
       return(
-        this.props.user.questions.map( (question, idx) => (
+        <div className="user-answer-index">
+        {this.props.user.questions.map( (question, idx) => (
           <AnswerPageIndexItem className="answer-page"
                                question={question}
                                currentUser={this.props.currentUser}
                                createAnswer={this.props.createAnswer}
+                               createUserAction={this.props.createUserAction}
+                               destroyUserAction={this.props.destroyUserAction}
+                               requestUserActions={this.props.requestUserActions}
+                               refreshUserActions={this.refreshUserActions}
+                               passedQuestions={this.props.passedQuestions}
+                               downvotedQuestions={this.props.downvotedQuestions}
                                key={idx} />
-        ))
+        ))}
+        </div>
       );
     }
   }
