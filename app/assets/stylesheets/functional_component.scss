@@ -1,0 +1,54 @@
+.suggestion-container > div {
+  margin-top: 15px;
+}
+
+.suggestion-container > div > h4 {
+  border-bottom: 2px solid #ccc;
+  padding: 5px 20px;
+  color: #000;
+}
+
+.suggestion-container ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion-container li {
+  display: flex;
+  align-items: center;
+}
+
+.suggestion-container a {
+  display: flex;
+  padding: 10px 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.suggestion-container a:hover {
+  background: #eee;
+  color: #2F4F4F;
+}
+
+.suggestion-container p {
+  padding: 10px;
+
+}
+
+.suggestion-container span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: image-url('francis-drake.jpg');
+  background-size: contain;
+  border-radius: 50%;
+}
+
+.suggestion-container img {
+  width: 30px;
+  height: 30px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+}

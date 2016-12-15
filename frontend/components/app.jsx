@@ -1,6 +1,7 @@
 import React from 'react';
 import SideBarContainer from './functional_components/sidebar_container.js';
 import HeaderContainer from './functional_components/header_container.js';
+import SuggestionContainer from './functional_components/suggestions_container.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class App extends React.Component {
           <div className="content-main">
             {this.props.children}
           </div>
+          <SuggestionContainer />
         </section>
       </div>
     );

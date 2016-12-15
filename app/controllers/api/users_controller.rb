@@ -11,7 +11,9 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    if params[:query].empty?
+    if !params[:query]
+      @users = User.all
+    elsif params[:query].empty?
       @users = []
     else
       query = "#{params[:query]}%".upcase
