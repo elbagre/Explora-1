@@ -1,5 +1,7 @@
 import React from 'react';
 import QuestionIndexItem from '../questions/question_index_item.jsx';
+import AnswerPageIndexItem from '../answer_page/answer_page_index_item.jsx';
+import { hashHistory } from 'react-router';
 
 class TopicHome extends React.Component {
   constructor(props) {
@@ -13,6 +15,11 @@ class TopicHome extends React.Component {
     this.followId = this.followId.bind(this);
     this.refreshUserActions = this.refreshUserActions.bind(this);
     this.filterQuestions = this.filterQuestions.bind(this);
+    this.changeFeed = this.changeFeed.bind(this);
+
+    this.state = {
+      content: "overview"
+    };
   }
 
   componentDidMount() {
@@ -34,12 +41,20 @@ class TopicHome extends React.Component {
     this.props.requestUserActions();
   }
 
+  handleClick(id) {
+    return () => hashHistory.push(`/question/${id}`);
+  }
+
   handleClass() {
     if (this.isFollowed()) {
       return "Following";
     } else {
       return "Follow";
     }
+  }
+
+  changeFeed(feed) {
+    return () => { this.setState({ content: feed}); };
   }
 
   toggleFollow() {
@@ -90,10 +105,9 @@ class TopicHome extends React.Component {
       return (
         <header>
           <h1>{this.props.topic.name}</h1>
-          <ul>
-            <li>Overview</li>
-            <li>Feed</li>
-            <li>Answer</li>
+          <ul className="topic-nav">
+            <li><a onClick={this.changeFeed("overview")}>Overview</a></li>
+            <li><a onClick={this.changeFeed("answer")}>Answer</a></li>
             <li><button onClick={this.toggleFollow}
                         className={this.handleClass().toLowerCase()}
                         >{this.handleClass()}</button></li>
@@ -115,8 +129,8 @@ class TopicHome extends React.Component {
     });
   }
 
-  questions() {
-    if (this.props.topic.questions) {
+  questions(feed) {
+    if (this.props.topic.questions && feed === "overview") {
       return (
         this.filterQuestions().map( (question, idx) => (
             <QuestionIndexItem question={question}
@@ -132,6 +146,47 @@ class TopicHome extends React.Component {
           )
         )
       );
+    } else if (this.props.topic.questions && feed === "answer") {
+      return (
+        this.filterQuestions().map((question, idx) => (
+          <AnswerPageIndexItem className="answer-page"
+                               question={question}
+                               currentUser={this.props.currentUser}
+                               createAnswer={this.props.createAnswer}
+                               createUserAction={this.props.createUserAction}
+                               destroyUserAction={this.props.destroyUserAction}
+                               requestUserActions={this.props.requestUserActions}
+                               refreshUserActions={this.refreshUserActions}
+                               passedQuestions={this.props.passedQuestions}
+                               downvotedQuestions={this.props.downvotedQuestions}
+                               key={idx} />
+          )
+        )
+      );
+    }
+  }
+
+  overview() {
+    return(
+      <div className="overview">
+        <h4>Summary</h4>
+        <p>{this.props.topic.description}</p>
+        {this.questions("overview")}
+      </div>
+    );
+  }
+
+  answers() {
+    return(
+      this.questions("answer")
+    );
+  }
+
+  pageContent() {
+    if (this.state.content === "overview") {
+      return this.overview();
+    } else if (this.state.content === "answer") {
+      return this.answers();
     }
   }
 
@@ -140,7 +195,7 @@ class TopicHome extends React.Component {
       <div className="topic-home">
         {this.header()}
         <div className="topic-container">
-          {this.questions()}
+          {this.pageContent()}
         </div>
       </div>
     );

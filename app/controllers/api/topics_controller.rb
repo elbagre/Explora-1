@@ -23,6 +23,7 @@ class Api::TopicsController < ApplicationController
     unless @topic.nil? || @topic.questions.empty?
       @questions = @topic.questions.joins(:answers)
                                    .having("COUNT(*) > 0")
+                                   .order("COUNT(answers.*) DESC")
                                    .group("questions.id")
                                    .preload(:author, answers: :author)
     else

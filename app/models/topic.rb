@@ -11,6 +11,7 @@
 
 class Topic < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
+  validates :description, presence: true
 
   belongs_to :parent_topic,
     class_name: "Topic",
