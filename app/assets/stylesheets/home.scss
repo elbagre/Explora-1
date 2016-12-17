@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  width: 67%;
+  width: 50%;
   z-index: 0;
 }
 
@@ -53,9 +53,10 @@
   flex-direction: column;
   width: 25%;
   height: 100vh;
-  min-width: 25%;
+  min-width: 15%;
   align-items: flex-end;
   z-index: 0;
+  padding-left: 11px;
 }
 
 .sidebar h4 {
@@ -70,7 +71,7 @@
 .feeds {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
 }
 
 .feeds > header {
