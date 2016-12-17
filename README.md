@@ -82,15 +82,29 @@ instances of ```TopicTaggings```. TopicTaggins are a class that connect a questi
 
 ### Topics
 
-Topics, as of yet, remain to be more fully developed. Currently a topic exists in the database with only a single
-column (in addition to id): ```name```. Topics have their own pages that display all associated questions. As 
-mentioned before, Topics are associated with questions through a connector class: ```TopicTaggings```.
+Topics are categories of questions. As mentioned above, a question is given categories upon creation. Topics contain two main columns: ```name``` and ```description```. Topics are associated with questions through a connector class: ```TopicTaggings```. On the Topic page, TopicTaggings are used to alternate between two feeds - the overview of each questions most upvoted answers and a page where you can answer the questions yourself.
+
+### Actionables
+
+Actionables, or UserActions as they exist in the database, are a polymorphic join table that unites a User to each of the other elements of the application. A User has several actions at their disposal: following, upvoting, downvoting, and passing. These actions can each be performed on a variety of different classes.
+
+```rb
+ class UserAction < ActiveRecord::Base
+  validates :user_id, :actionable_id, :actionable_type, :user_action, presence: true
+  validates :user_id, uniqueness: { scope: [:actionable_id, :actionable_type, :user_action]}
+
+  belongs_to :user
+
+  belongs_to :actionable,
+    polymorphic: true
+ end
+```
+
+The current user's actions are requested upon log in and are kept in the store. As a result, the feed can be easily manipulated to alter the content as acted upon by the user.
+
 
 ## To Be Implemented
 
-- Enhanced topic pages with overfiew, feed, and answer sections. 
+- Enhanced user pages (messaging/profile pictures)
 - Infinite Scroll
-- Upvotes/Downvotes
-- Sorting and Question Selection based on the above
-- User Profile
-- Following of Topics
+- Using follows to manipulate feed
