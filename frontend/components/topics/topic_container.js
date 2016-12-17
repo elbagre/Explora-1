@@ -11,7 +11,9 @@ const mapStateToProps = (state, ownProps) => ({
   follows: state.actionables.followedTopics,
   currentUser: state.session.currentUser,
   upvotedAnswers: state.actionables.upvotedAnswers,
-  downvotedAnswers: state.actionables.downvotedAnswers
+  downvotedAnswers: state.actionables.downvotedAnswers,
+  passedQuestions: state.actionables.passedQuestions,
+  downvotedQuestions: state.actionables.downvotedQuestions
 });
 
 const mapDispatchToProps = (dispatch) => ({
