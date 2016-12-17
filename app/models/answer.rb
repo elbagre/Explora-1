@@ -17,8 +17,7 @@
 #
 
 class Answer < ActiveRecord::Base
-  validates :author_id, :question_id, presence: true
-  validates :body, length: { minimum: 20 }
+  validates :author_id, :question_id, :body, presence: true
 
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
