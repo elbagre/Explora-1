@@ -15,11 +15,12 @@ export const fetchSingleQuestion = (id, success) => {
   });
 };
 
-export const postQuestion = (question, success) => {
+export const postQuestion = (question, success, error) => {
   $.ajax({
     method: 'POST',
     url: '/api/questions',
     data: {question},
-    success
+    success,
+    error
   });
 };

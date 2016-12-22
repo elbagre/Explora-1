@@ -1,5 +1,6 @@
 import * as Questions from '../actions/question_actions.js';
 import * as API from '../util/question_api_util.js';
+import { receiveErrors, clearErrors } from '../actions/session_actions.js'
 import { hashHistory } from 'react-router';
 
 const QuestionMiddleware = ({getState, dispatch}) => (next) => (action) => {
@@ -11,6 +12,8 @@ const QuestionMiddleware = ({getState, dispatch}) => (next) => (action) => {
     hashHistory.push(`/question/${question.id}`)
   }
 
+  const failure = errors => dispatch(receiveErrors(errors));
+
   switch(action.type) {
     case Questions.REQUEST_ALL_QUESTIONS:
       API.fetchAllQuestions(questionsSuccess);
@@ -19,7 +22,7 @@ const QuestionMiddleware = ({getState, dispatch}) => (next) => (action) => {
       API.fetchSingleQuestion(action.id, questionSuccess);
       return next(action);
     case Questions.CREATE_QUESTION:
-      API.postQuestion(action.question, questionSuccess);
+      API.postQuestion(action.question, questionSuccess, failure);
       return next(action);
     default:
       return next(action);

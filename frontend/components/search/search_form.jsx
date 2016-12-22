@@ -10,7 +10,6 @@ class SearchBar extends React.Component {
         description: "",
         query: "",
         author_id: this.props.currentUser.id,
-        search: "search-submit",
         describe: "describe-hidden"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,6 +44,14 @@ class SearchBar extends React.Component {
     })
   }
 
+  activateButton() {
+    if (!this.state.title) {
+      return "disabled"
+    } else {
+      return "search-submit"
+    }
+  }
+
   handleChange(type, e) {
     if (type === "description") {
       this.setState({
@@ -60,12 +67,17 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createQuestion({
-      title: this.state.title,
-      description: this.state.description,
-      author_id: this.state.author_id
-    });
-    this.clearForms();
+
+    if (this.state.title) {
+      this.props.createQuestion({
+        title: this.state.title,
+        description: this.state.description,
+        author_id: this.state.author_id
+      });
+      this.clearForms();
+    } else {
+      this.props.toggleFocus();
+    }
   }
 
   render() {
@@ -80,7 +92,9 @@ class SearchBar extends React.Component {
                  onKeyUp={this.querySearch}
                  onClick={this.handleClick.bind(this)}
                  onChange={this.handleChange.bind(this, "title")}/>
-         <input type="submit" value="Ask Question" className={this.state.search}/>
+         <input type="submit"
+                value="Ask Question"
+                className={this.activateButton()}/>
         </form>
         <button className="toggle" onClick={this.handleClick.bind(this, "toggle")}>v</button>
         <textarea className={this.state.describe}

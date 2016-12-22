@@ -7,7 +7,7 @@ class Api::QuestionsController < ApplicationController
       @answers = []
       render :show
     else
-      render @question.errors.full_messages, status: 402
+      render json: ["Question cannot be empty"], status: 400
     end
   end
 

@@ -106,7 +106,7 @@
   color: #2F4F4F;
 }
 
-.focused .search-form > input[type="submit"] {
+.focused .search-form > .search-submit {
   background: #20B2AA;
   color: #fff;
   border: 1px solid #008B8B;
@@ -148,4 +148,10 @@
 
 .search-bar {
   position: relative;
+}
+
+.focused .search-form > input.disabled {
+  background: #eee;
+  cursor: default;
+  color: #aaa;
 }
