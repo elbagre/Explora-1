@@ -8,6 +8,8 @@
 }
 
 .home-main {
+  resize: none;
+  min-width: 1000px;
   display: flex;
   flex-direction: row;
   margin: 0 auto;

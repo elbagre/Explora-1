@@ -3,6 +3,7 @@ export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const REQUEST_CURRENT_USER = "REQUEST_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
 
 export const signup = (user) => ({
   type: SIGNUP,
@@ -26,4 +27,8 @@ export const requestCurrentUser = (currentUser) => ({
 export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
 });

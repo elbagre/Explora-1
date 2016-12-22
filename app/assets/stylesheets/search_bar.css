@@ -18,7 +18,8 @@
 .home-nav {
   display: flex;
   margin: 0 auto;
-  min-width: 50%;
+  width: 50%;
+  min-width: 1000px;
   justify-content: space-between;
 }
 
