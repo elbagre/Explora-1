@@ -14,7 +14,7 @@ class SessionLinks extends React.Component {
   displayErrors() {
     if (this.props.errors.length) {
       return(
-        <li>Incorrect username or password.</li>
+        <div className="register-errors">Incorrect username or password</div>
       );
     }
   }
@@ -30,7 +30,7 @@ class SessionLinks extends React.Component {
           </ul>
           {this.props.children}
         </nav>
-        <div className="register-errors">{this.displayErrors()}</div>
+        {this.displayErrors()}
       </div>
     );
   }
