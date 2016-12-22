@@ -12,13 +12,16 @@ const SessionMiddleware = ({getState, dispatch}) => next => action => {
   switch(action.type) {
     case Session.LOGIN:
       API.login(action.user, success, failure);
-      return next(action);
+      break;
     case Session.SIGNUP:
       API.signup(action.user, success, failure);
-      return next(action);
+      break;
     case Session.LOGOUT:
-      API.logout(() => hashHistory.push('/entry'));
-      return next(action);
+      API.logout(() => {
+        next(action);
+        hashHistory.push('/entry');
+      });
+      break;
     default:
       next(action);
   }

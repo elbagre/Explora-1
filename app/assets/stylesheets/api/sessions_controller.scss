@@ -12,9 +12,9 @@
   padding-bottom: 35px;
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 20%;
+  min-width: 420px;
   margin: 0 auto;
-  align-items: center;
 }
 
 .root-header > h1 {
@@ -23,12 +23,14 @@
   -webkit-text-stroke-color: #008B8B;
   font-weight: bold;
   color: #20B2AA;
+  margin: 0 auto;
 }
 
 .registration {
   width: 20%;
   min-width: 400px;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   background: #fff;
   margin: 0 auto;
   padding: 10px;

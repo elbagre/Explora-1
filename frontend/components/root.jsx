@@ -23,7 +23,7 @@ const Root = ({ store }) => {
   const _redirectUnlessLoggedIn = (nextState, replace) => {
     if (!loggedIn()) {
       replace('/entry');
-    }
+    } 
   }
 
     return (

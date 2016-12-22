@@ -2,8 +2,7 @@ import * as Session from '../actions/session_actions.js';
 import { merge } from 'lodash';
 
 const defaultState = {
-  currentUser: null,
-  errors: []
+  currentUser: null
 };
 
 const SessionReducer = (inititalState = defaultState, action) => {

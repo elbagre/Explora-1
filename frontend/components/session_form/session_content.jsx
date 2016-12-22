@@ -1,12 +1,12 @@
 import React from 'react';
-import SessionLinks from './session_links.jsx';
+import SessionLinksContainer from './session_links_container.js';
 import HeaderContainer from '../functional_components/header_container.js';
 
 const SessionContent = ({children}) => (
   <div className="session-content">
     <HeaderContainer />
     <div className="session_form_container">
-      <SessionLinks children={children} />
+      <SessionLinksContainer children={children} />
     </div>
   </div>
 );
