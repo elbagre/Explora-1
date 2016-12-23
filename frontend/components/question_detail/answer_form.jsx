@@ -50,6 +50,14 @@ class AnswerForm extends React.Component {
     });
   }
 
+  enableButton() {
+    if(this.state.answer) {
+      return "submit-button";
+    } else {
+      return "hidden";
+    }
+  }
+
   updateFile(e) {
     const file = e.currentTarget.files[0];
     var fileReader = new FileReader();
@@ -65,11 +73,7 @@ class AnswerForm extends React.Component {
   render() {
     return (
       <section className="detail-page-answer">
-        <div>
-          <h4>Can you answer this question?</h4>
-          <button onClick={this.handleToggle}>Answer</button>
-        </div>
-        <div className={this.state.toggle}>
+        <div className={this.props.toggled}>
           <form className="hidden-form" onSubmit={this.handleSubmit}>
             <div>
               <div className="author-photo" />
@@ -89,7 +93,7 @@ class AnswerForm extends React.Component {
               onChange={this.handleChange("answer")}
               placeholder="Write your answer"
               value={this.state.answer} />
-            <input type="submit" value="Submit" />
+            <input className={this.enableButton()} type="submit" value="Submit" />
           </form>
         </div>
       </section>

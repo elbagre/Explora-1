@@ -5,6 +5,17 @@
   margin: 0 auto;
 }
 
+.question-detail > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 35px;
+}
+
+.question-detail > div > h4 {
+  margin-bottom: 20px;
+}
+
 .question-list {
   margin-top: 10px;
   display: flex;

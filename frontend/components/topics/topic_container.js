@@ -4,6 +4,7 @@ import { requestAllComments } from '../../actions/comment_actions.js';
 import { requestSingleTopic, receiveSingleTopic } from '../../actions/topic_actions.js';
 import TopicHome from './topic_home.jsx';
 import * as Actionable from '../../actions/actionable_actions.js';
+import { createAnswer } from '../../actions/answer_actions.js';
 
 const mapStateToProps = (state, ownProps) => ({
   id: parseInt(ownProps.params.id),
@@ -17,6 +18,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  createAnswer: (answer) => dispatch(createAnswer(answer)),
   requestSingleQuestion: (id) => dispatch(requestSingleQuestion(id)),
   receiveSingleTopic: (topic) => dispatch(receiveSingleTopic(topic)),
   requestSingleTopic: (id) => dispatch(requestSingleTopic(id)),

@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import AnswerForm from '../question_detail/answer_form.jsx';
 
 class AnswerPageIndexItem extends React.Component {
   constructor(props) {
@@ -163,27 +164,10 @@ class AnswerPageIndexItem extends React.Component {
         <li><button onClick={this.togglePass}>{this.handlePass()}</button></li>
         <li><a onClick={this.toggleDownvote}>{this.handleDownvote()}</a></li>
       </ul>
-      <form className="hidden-form" onSubmit={this.handleSubmit}>
-        <div>
-          <div className="author-photo" />
-          <div>
-            <h4>{this.props.currentUser.username}</h4>
-            <a>Add Bio</a>
-          </div>
-        </div>
-        <ul className="form-style">
-          <li><input type="file"
-                     onChange={this.updateFile} /></li>
-        </ul>
-        <textarea className="answer-bio"
-          onChange={this.handleChange("bio")}
-          value={this.state.bio} />
-        <textarea className="answer-input"
-          onChange={this.handleChange("answer")}
-          placeholder="Write your answer"
-          value={this.state.answer} />
-        <input type="submit" value="Submit" />
-      </form>
+      <AnswerForm
+        currentUser={this.props.currentUser}
+        id={this.props.question.id}
+        createAnswer={this.props.createAnswer}/>
       </article>
     );
   }

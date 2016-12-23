@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { createAnswer } from '../../actions/answer_actions.js';
 import { requestSingleUser, receiveSingleUser } from '../../actions/user_actions.js';
 import { requestAllComments } from '../../actions/comment_actions.js';
 import * as Actionable from '../../actions/actionable_actions.js';

@@ -17,6 +17,11 @@
   padding: 5px 0;
 }
 
+.question-detail .answer-index > h4 {
+  border-bottom: 1px solid #ccc;
+  margin-top: 25px;
+}
+
 .answer-box {
   padding: 10px 0;
 }
@@ -61,6 +66,7 @@
   margin-top: 20px;
   display: none;
   width: 100%;
+  max-width: 700px;
   overflow: hidden;
   background: #E5DEDE;
 }

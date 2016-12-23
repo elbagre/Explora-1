@@ -17,6 +17,11 @@ class QuestionDetail extends React.Component {
     this.toggleDownvote = this.toggleDownvote.bind(this);
     this.answers = this.answers.bind(this);
     this.refreshUserActions = this.refreshUserActions.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
+
+    this.state = {
+      toggle: "answer-box"
+    };
   }
 
   componentDidMount() {
@@ -81,6 +86,14 @@ class QuestionDetail extends React.Component {
       });
     }
     this.props.requestUserActions();
+  }
+
+  handleToggle() {
+    if (this.state.toggle === "answer-box") {
+      this.setState({ toggle: "answer-box toggled" });
+    } else {
+      this.setState({ toggle: "answer-box"});
+    }
   }
 
   handleDownvote() {
@@ -152,7 +165,12 @@ class QuestionDetail extends React.Component {
             <li><a onClick={this.toggleDownvote}>{this.handleDownvote()}</a></li>
           </ul>
         </header>
+        <div>
+          <h4>Can you answer this question?</h4>
+          <button onClick={this.handleToggle}>Answer</button>
+        </div>
         <AnswerForm
+          toggled={this.state.toggle}
           currentUser={this.props.currentUser}
           id={this.props.id}
           createAnswer={this.props.createAnswer}/>

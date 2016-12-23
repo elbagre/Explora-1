@@ -7,7 +7,7 @@ export const createAnswer = (formData, success) => {
     processData: false,
     data: formData,
     success,
-    error: () => console.log("MESSED UP")
+    error: (errors) => console.log(errors)
   });
 };
 
